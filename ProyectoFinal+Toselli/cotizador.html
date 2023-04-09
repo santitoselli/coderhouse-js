@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProyectoFinal+Toselli - Cotizador</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="prefetch" href="cotizador.html" as="document">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="contenedor-nav">
+            <div class="barra">
+                <a class="logo" href="index.html">
+                    <h1 class="logo-h1 no-margin">Cotizador<span class="h1-bold">DeProductos</span></h1>
+                </a>
+                <nav class="nav-bar">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                    <a class="nav-link" href="cotizador.html">Cotizador</a>
+                    <a class="nav-link" href="acerca.html">Acerca</a>
+                </nav>
+            </div>
+            <div class="header-desc">
+                <h2 class="no-margin">Comparador de productos online</h2>
+                <p> Cotizá tus productos para elegir el mejor método de pago</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="descripcion">
+            <h3>Lista de Productos</h3>
+            <p>Completá los campos para comenzar a comparar. Podés comparar distintos medios de pago sobre 1
+                producto, o podés agregar más productos. También podés ver la cotización del dólar del día según el tipo
+                de cambio</p>
+        </div>
+
+        <div class="contenedor-formulario">
+
+            <div class="card-formulario">
+                <form class="formulario">
+                    <label for="nombre" class="label">Producto</label>
+                    <input type="text" id="nombre" placeholder="Ingresá el nombre del producto" required>
+
+                    <label for="precio" class="label">Precio</label>
+                    <input type="number" id="precio" placeholder="Ingresá el precio del producto" required>
+
+                    <button class="btn-add" onclick="agregarProducto()">Agregar</button>
+                </form>
+            </div>
+
+            <div class="card-cotizador">
+                <form class="cotizador">
+                    <p>Seleccioná el tipo de cambio para ver la cotización del día</p>
+                    <select class="tipo-usd">
+                        <option>--Seleccionar--</option>
+                        <option value="Dolar Oficial">Dólar Oficial</option>
+                        <option value="Dolar Blue">Dólar Blue</option>
+                        <option value="Dolar Contado con Liqui">Contado con Liqui</option>
+                        <option value="Dolar Bolsa">Dólar Bolsa/MEP</option>
+                        <option value="Bitcoin">Dólar Bitcoin</option>
+                        <option value="Dolar turista">Dólar Turista</option>
+                    </select>
+
+                    <div class="cotizacion"></div>
+            </div>
+            </form>
+        </div>
+
+        </div>
+
+        <div class="contenedor-productos">
+            <table class="lista-productos">
+                <thead>
+                    <tr>
+                        <th class="celda-eliminar"></th>
+                        <th>Producto</th>
+                        <th>Precio de Lista</th>
+                        <th>Método de Pago</th>
+                        <th>Cuotas</th>
+                        <th>Precio final</th>
+                    </tr>
+                </thead>
+
+                <tbody id="productos-agregados"></tbody>
+
+            </table>
+            <button type="submit" class="btn-clear" onclick="limpiarTabla()">Limpiar tabla</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="no-margin">Creado por Santi Toselli | Abril 2023</p>
+        <p class="no-margin">Coderhouse | Curso de JavaScript | Comisión 51115</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
